@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* 让所有斜体不倾斜 */
+em,
+i {
+    font-style: normal;
+}
+li {
+    list-style: none;
+}
+/* 让图片没有边框   去掉图片底部的空白缝隙 */
+img {
+    border: 0;
+    vertical-align: middle;
+}
+button {
+    cursor: pointer;
+}
+a {
+    color: #666;
+    text-decoration: none;
+}
+a:hover {
+    color: #e33333;
+}
+/* 下载字体: 'Microsoft yahei', 'Heiti SC' */
+button,
+input {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fff;
+    font: 12px/1.5 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #666;
+}
+.hide,
+.none {
+    display: none;
+}
+
+/* 清除浮动 */
+.clearfix:after {
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: ".";
+    height: 0;
+}
+
+.clearfix {
+    *zoom: 1;
+}

@@ -1,0 +1,108 @@
+项目文件夹: 
+upload: 后端上传的图片文件夹
+img: 图片文件夹
+base.css: 初始化的css, 让浏览器风格统一的常用初始化语句
+common.css: 公共样式, 不同页面的header\footer部分样式几乎一样
+index.html: 首页, 先语言修改为中文: lang="zh-CN"
+
+网站的ico图标:
+    引入图标放在head标签之间:
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    图标制作:
+        切图
+        将png格式的图片转换为ico图标: 借助http://www.bitbug.net/ 比特虫转换
+        常用网页图标大小: 16X16 32X32 48X48
+
+网站优化的三大标签:
+    SEO( Search Engine Optimization )搜索引擎优化
+    title: 
+        标题长度: 不超过28个中文字符
+        网站名-网站介绍: 品优购-综合网购首选-正品低价、品质保障、配送及时、轻松购物！
+        
+    
+    description：
+        网站说明： 对网站业务和主题的概括
+        不超过120个汉字
+        <mate name="description" content = "品优购-专业的综合网上购物商城,销售家电、数码通讯、电脑、家居百货、服装服饰、母婴、图书、食品等数万个品牌优质商品.便捷、诚信的服务,为您提供愉悦的网上购物体验!" />
+    keywords
+        6-8个关键词
+        <mate name="Keywords" content="网上购物，网上商城，手机，笔记本，电脑，MP3，CD，VCD，DV，相继，数码，配件，手表，存储卡，品优购" />
+    
+字体图标iconfont:
+    推荐网站: http://iconmoon.io
+            http://iconfont.cn/
+    字体图标引入: font文件夹 - iconfont.ttf字体文件
+        1. 把fonts文件夹放到根目录下
+        2. 打开字体文件夹中的demo.html文件, 在里面找到要用的字体, 复制到HTML页面的标签内容中 ( 可能啥也看不见 )
+        3. 在样式里面声明字体图标: ( 注意路径问题 )
+            @font-face {
+                font-family: 'icomoon'; // 在哪里用, 就在哪里注明字体即可
+                src:  url('fonts/icomoon.eot?7kkyc2');
+                src:  url('fonts/icomoon.eot?7kkyc2#iefix') format('embedded-opentype'),
+                    url('fonts/icomoon.ttf?7kkyc2') format('truetype'),
+                    url('fonts/icomoon.woff?7kkyc2') format('woff'),
+                    url('fonts/icomoon.svg?7kkyc2#icomoon') format('svg');
+                font-weight: normal;
+                font-style: normal;
+                }
+        4. 给盒子使用字体
+            <span>   <span>
+            span {
+                font-family: 'icomoon'; // 这个名字要跟上面字体声明里面的font-family一样, 可以自行修改
+                font-size: red; 
+            }
+        5. 追加字体图标
+            icomoon文件夹 - selection.json文件
+            Import Icons点击导入字体 - 选择selection.json - create - download - 替换掉项目文件夹中的fonts文件
+
+----------------------------------------------------------------------------------------------------------------------
+
+首页:
+
+快捷导航栏: shortcut
+    高度: 31px, 背景颜色: f1f1f1
+    版心: .w
+    左边盒子: .fl
+    右边盒子: .fr 小竖线<li class = "spacer" >给宽高背景色模拟出来的分割线<li> 12px高, #666
+    .style-red {color: #c81623;}
+header
+    大盒子: height: 105px
+    小盒子定位: logo 搜索 热词 购物车
+    logo优化: 搜索引擎优化
+        h1标签: 提权, 添加链接, 可以点击logo返回首页, a标签里面加背景
+        a链接, 文字: 网站名称, 隐藏文字: overflow: hidden; text-indent: -9999px; 或者: font-size: 0;
+        a链接加上title: hover时显示品优购三个字
+    搜索框search: input+ button
+    hotwords: a标签 
+    cart: count: 绝对定位, 不要给宽度, 随着里面值改变宽度 #e60012
+            文字没有随块的原因是继承了父级的行高line-height34px, 手动修改行高 
+    nav: 
+    nav_item: 导航栏右侧鼠标hover空白部分文字变色, padding值给a, 而不是li, 细节很重要
+footer 
+    flex弹性盒布局
+
+index.css 首页样式
+   
+电梯导航: fixed固定定位 
+
+----------------------------------------------------------------------------------------------------------------------
+
+列表页: 手机页面
+
+title修改为: <title>列表页-手机页面！</title>
+
+分页制作: page
+宽度不设, 内容居中
+左边1号盒子用page_num(页码的意思)里面放a 把a转换为行内块, 设置样式
+右边2号盒子命名为page_skip(skip跳转的意思) 里面注意有input和button
+
+:focus焦点伪类
+
+面包屑导航: crumb_wrap
+产品介绍模块: procduct_intr 不给行高, 原因是产品详情有多有少, 行高不定; 子元素加浮动, 这里需要清除浮动, 否则子元素会跑到footer里面
+    左侧预览区: prview_wrap 
+    右侧产品详细: iteminfo_wrap
+
+块级元素居中对齐: margin: 0 auto;
+行内元素居中对齐: text-align: center;
+                line-height: 行高;
